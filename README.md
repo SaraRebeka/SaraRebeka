@@ -1,5 +1,5 @@
 - 👋 Hi, I’m @SaraRebeka
-- 👀 I’m interested in studying programming... Alone... Maybe i'm crazy... But if you'd like to help 🫡
+- 👀 I’m interested in studying programming... Alone... Maybe i'm crazy... But if you'd like to help 🫡 Who am I not to accept?
 - 🌱 I’m currently learning the basic...
 - 🧭 I’m looking to collaborate with anything i can do...
 - 📫 How to reach me: 

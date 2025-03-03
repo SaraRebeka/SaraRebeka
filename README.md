@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @SaraRebeka
 - 👀 I’m interested in studying programming.
-- 🌱 I’m currently learning the basic.
+- 🌱 I’m currently studying Systems Analysis and Development.
 - 🧭 I’m looking to collaborate with anything i can do.
 - 📫 How to reach me: 
 

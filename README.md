@@ -1,7 +1,7 @@
 - 👋 Hi, I’m @SaraRebeka
-- 👀 I’m interested in studying programming... Alone... Maybe i'm crazy...
-- 🌱 I’m currently learning the basic...
-- 🧭 I’m looking to collaborate with anything i can do...
+- 👀 I’m interested in studying programming.
+- 🌱 I’m currently learning the basic.
+- 🧭 I’m looking to collaborate with anything i can do.
 - 📫 How to reach me: 
 
 LinkedIn: https://www.linkedin.com/in/sara-rebeka-pinheiro-mendes-17511b261/ ;

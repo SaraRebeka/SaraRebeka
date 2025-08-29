@@ -4,7 +4,7 @@
 - 🧭 I’m looking to collaborate with anything i can do.
 - 📫 How to reach me: 
 
-LinkedIn: https://www.linkedin.com/in/sara-rebeka-pinheiro-mendes-17511b261/ ;
+LinkedIn: https://www.linkedin.com/in/sara-rebeka-pinheiro-mendes ;
 
 Instagram: @sara_rebeka_pinheiro_mendes
 

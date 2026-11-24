@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="86" viewBox="0 0 860 86" role="img" aria-label="PROJETOS">
+<title>PROJETOS</title>
+<style>
+@font-face{font-family:'Orbitron';font-weight:400 900;src:url(data:font/woff2;base64,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) format('woff2');}
+text{font-family:'Orbitron'}
+.t{font-weight:700;font-size:26px;fill:#fff;letter-spacing:6px;text-anchor:middle}
+.n{font-size:12px;fill:#ff52ff;letter-spacing:3px;text-anchor:middle}
+.bar{stroke:#e100ff;stroke-width:2;stroke-dasharray:420;stroke-dashoffset:420;animation:draw 1.6s ease forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.tw{animation:tw 4s ease-in-out infinite}
+@keyframes tw{0%,100%{opacity:.15}50%{opacity:1}}
+@media (prefers-reduced-motion: reduce){*{animation:none!important}}
+</style>
+<defs>
+  <radialGradient id="void" cx="50%" cy="50%" r="75%">
+    <stop offset="0" stop-color="#1a0420"/><stop offset=".45" stop-color="#0f0f0f"/>
+    <stop offset="1" stop-color="#000"/>
+  </radialGradient>
+  <filter id="glow" x="-30%" y="-60%" width="160%" height="220%">
+    <feGaussianBlur stdDeviation="3" result="a"/>
+    <feGaussianBlur stdDeviation="9" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="a"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <filter id="soft" x="-20%" y="-50%" width="140%" height="200%">
+    <feGaussianBlur stdDeviation="2.2" result="a"/>
+    <feMerge><feMergeNode in="a"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse">
+    <rect width="4" height="1" fill="#fff" opacity=".025"/>
+  </pattern></defs>
+<rect width="860" height="86" rx="14" fill="url(#void)"/><rect width="860" height="86" rx="14" fill="url(#scan)"/>
+  <text x="430" y="22" class="n">// 01</text>
+  <text x="430" y="58" class="t" filter="url(#glow)">PROJETOS</text>
+  <line x1="40" y1="52" x2="250" y2="52" class="bar" filter="url(#soft)"/>
+  <line x1="820" y1="52" x2="610" y2="52" class="bar" filter="url(#soft)"/>
+</svg>

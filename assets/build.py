@@ -94,12 +94,15 @@ DEFS = f"""
     <stop offset="0" stop-color="#1c0622"/><stop offset="1" stop-color="#0a070d"/>
   </radialGradient>
   <filter id="glow" x="-30%" y="-60%" width="160%" height="220%">
-    <feGaussianBlur stdDeviation="3" result="a"/>
-    <feGaussianBlur stdDeviation="9" result="b"/>
-    <feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="a"/><feMergeNode in="SourceGraphic"/></feMerge>
+    <feGaussianBlur stdDeviation="2" result="a"/>
+    <feGaussianBlur stdDeviation="7" result="b0"/>
+    <feComponentTransfer in="b0" result="b"><feFuncA type="linear" slope=".45"/></feComponentTransfer>
+    <feComponentTransfer in="a" result="a2"><feFuncA type="linear" slope=".6"/></feComponentTransfer>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="a2"/><feMergeNode in="SourceGraphic"/></feMerge>
   </filter>
   <filter id="soft" x="-20%" y="-50%" width="140%" height="200%">
-    <feGaussianBlur stdDeviation="2.2" result="a"/>
+    <feGaussianBlur stdDeviation="1.6" result="a0"/>
+    <feComponentTransfer in="a0" result="a"><feFuncA type="linear" slope=".55"/></feComponentTransfer>
     <feMerge><feMergeNode in="a"/><feMergeNode in="SourceGraphic"/></feMerge>
   </filter>
   <pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse">
@@ -160,14 +163,14 @@ def pagina(w, h, topo=False, base=False, lado=None):
         rh += ext
     ret = f'x="{x}" y="{y}" width="{rw}" height="{rh}" rx="{r}"'
     return (f'<rect {ret} fill="{BG}"/><rect {ret} fill="url(#scan)"/>'
-            f'<rect {ret} fill="none" stroke="{NEON}" stroke-opacity=".6" stroke-width="1.5" filter="url(#soft)"/>')
+            f'<rect {ret} fill="none" stroke="{NEON}" stroke-opacity=".45" stroke-width="1.5" filter="url(#soft)"/>')
 
 
 def painel(x, y, w, h, r=14):
     return (f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{r}" fill="url(#cardbg)"/>'
             f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{r}" fill="url(#scan)"/>'
             f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{r}" fill="none" '
-            f'stroke="{NEON}" stroke-opacity=".55" stroke-width="1.5" filter="url(#soft)"/>')
+            f'stroke="{NEON}" stroke-opacity=".4" stroke-width="1.5" filter="url(#soft)"/>')
 
 
 def titulo_secao(nome, idx, y):

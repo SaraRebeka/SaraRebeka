@@ -37,18 +37,21 @@
     <stop offset="0" stop-color="#1c0622"/><stop offset="1" stop-color="#0a070d"/>
   </radialGradient>
   <filter id="glow" x="-30%" y="-60%" width="160%" height="220%">
-    <feGaussianBlur stdDeviation="3" result="a"/>
-    <feGaussianBlur stdDeviation="9" result="b"/>
-    <feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="a"/><feMergeNode in="SourceGraphic"/></feMerge>
+    <feGaussianBlur stdDeviation="2" result="a"/>
+    <feGaussianBlur stdDeviation="7" result="b0"/>
+    <feComponentTransfer in="b0" result="b"><feFuncA type="linear" slope=".45"/></feComponentTransfer>
+    <feComponentTransfer in="a" result="a2"><feFuncA type="linear" slope=".6"/></feComponentTransfer>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="a2"/><feMergeNode in="SourceGraphic"/></feMerge>
   </filter>
   <filter id="soft" x="-20%" y="-50%" width="140%" height="200%">
-    <feGaussianBlur stdDeviation="2.2" result="a"/>
+    <feGaussianBlur stdDeviation="1.6" result="a0"/>
+    <feComponentTransfer in="a0" result="a"><feFuncA type="linear" slope=".55"/></feComponentTransfer>
     <feMerge><feMergeNode in="a"/><feMergeNode in="SourceGraphic"/></feMerge>
   </filter>
   <pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse">
     <rect width="4" height="1" fill="#fff" opacity=".022"/>
   </pattern></defs>
-<rect x="1" y="1" width="858" height="906" rx="22" fill="#08060c"/><rect x="1" y="1" width="858" height="906" rx="22" fill="url(#scan)"/><rect x="1" y="1" width="858" height="906" rx="22" fill="none" stroke="#e100ff" stroke-opacity=".6" stroke-width="1.5" filter="url(#soft)"/>
+<rect x="1" y="1" width="858" height="906" rx="22" fill="#08060c"/><rect x="1" y="1" width="858" height="906" rx="22" fill="url(#scan)"/><rect x="1" y="1" width="858" height="906" rx="22" fill="none" stroke="#e100ff" stroke-opacity=".45" stroke-width="1.5" filter="url(#soft)"/>
   <circle cx="549.9" cy="21.7" r="1" fill="#fff" class="tw" style="animation-delay:0.89s;animation-duration:4.71s"/>
   <circle cx="582.0" cy="774.4" r="0.6" fill="#ff52ff" class="tw" style="animation-delay:0.13s;animation-duration:2.78s"/>
   <circle cx="200.1" cy="522.6" r="0.8" fill="#ff52ff" class="tw" style="animation-delay:0.88s;animation-duration:4.27s"/>
@@ -169,7 +172,7 @@
   <text x="430" y="242" class="sub">ANÁLISE E DESENVOLVIMENTO DE SISTEMAS</text>
   <rect x="310" y="272" width="240" height="46" rx="8" class="cta-b" filter="url(#glow)"/>
   <text x="430" y="300" class="cta" filter="url(#soft)">ENTRAR NO SITE ↗</text>
-  <rect x="30" y="372" width="800" height="396" rx="14" fill="url(#cardbg)"/><rect x="30" y="372" width="800" height="396" rx="14" fill="url(#scan)"/><rect x="30" y="372" width="800" height="396" rx="14" fill="none" stroke="#e100ff" stroke-opacity=".55" stroke-width="1.5" filter="url(#soft)"/>
+  <rect x="30" y="372" width="800" height="396" rx="14" fill="url(#cardbg)"/><rect x="30" y="372" width="800" height="396" rx="14" fill="url(#scan)"/><rect x="30" y="372" width="800" height="396" rx="14" fill="none" stroke="#e100ff" stroke-opacity=".4" stroke-width="1.5" filter="url(#soft)"/>
   <circle cx="54" cy="396" r="5" fill="#ff5f7a" opacity=".8"/><circle cx="72" cy="396" r="5" fill="#e100ff" opacity=".8"/><circle cx="90" cy="396" r="5" fill="#8a5cff" opacity=".8"/>
   <text x="806" y="400" class="t-small" text-anchor="end">sara@void:~$ whoami</text>
   <line x1="31" y1="418" x2="829" y2="418" stroke="#e100ff" stroke-opacity=".25"/>

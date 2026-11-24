@@ -26,18 +26,21 @@
     <stop offset="0" stop-color="#1c0622"/><stop offset="1" stop-color="#0a070d"/>
   </radialGradient>
   <filter id="glow" x="-30%" y="-60%" width="160%" height="220%">
-    <feGaussianBlur stdDeviation="3" result="a"/>
-    <feGaussianBlur stdDeviation="9" result="b"/>
-    <feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="a"/><feMergeNode in="SourceGraphic"/></feMerge>
+    <feGaussianBlur stdDeviation="2" result="a"/>
+    <feGaussianBlur stdDeviation="7" result="b0"/>
+    <feComponentTransfer in="b0" result="b"><feFuncA type="linear" slope=".45"/></feComponentTransfer>
+    <feComponentTransfer in="a" result="a2"><feFuncA type="linear" slope=".6"/></feComponentTransfer>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="a2"/><feMergeNode in="SourceGraphic"/></feMerge>
   </filter>
   <filter id="soft" x="-20%" y="-50%" width="140%" height="200%">
-    <feGaussianBlur stdDeviation="2.2" result="a"/>
+    <feGaussianBlur stdDeviation="1.6" result="a0"/>
+    <feComponentTransfer in="a0" result="a"><feFuncA type="linear" slope=".55"/></feComponentTransfer>
     <feMerge><feMergeNode in="a"/><feMergeNode in="SourceGraphic"/></feMerge>
   </filter>
   <pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse">
     <rect width="4" height="1" fill="#fff" opacity=".022"/>
   </pattern></defs>
-<rect x="-39" y="-39" width="468" height="358" rx="22" fill="#08060c"/><rect x="-39" y="-39" width="468" height="358" rx="22" fill="url(#scan)"/><rect x="-39" y="-39" width="468" height="358" rx="22" fill="none" stroke="#e100ff" stroke-opacity=".6" stroke-width="1.5" filter="url(#soft)"/>
+<rect x="-39" y="-39" width="468" height="358" rx="22" fill="#08060c"/><rect x="-39" y="-39" width="468" height="358" rx="22" fill="url(#scan)"/><rect x="-39" y="-39" width="468" height="358" rx="22" fill="none" stroke="#e100ff" stroke-opacity=".45" stroke-width="1.5" filter="url(#soft)"/>
   <circle cx="270.6" cy="180.2" r="0.8" fill="#ff52ff" class="tw" style="animation-delay:2.32s;animation-duration:2.82s"/>
   <circle cx="261.0" cy="55.4" r="0.6" fill="#ff52ff" class="tw" style="animation-delay:2.11s;animation-duration:4.52s"/>
   <circle cx="352.4" cy="277.1" r="1" fill="#ff52ff" class="tw" style="animation-delay:2.44s;animation-duration:4.35s"/>
@@ -56,7 +59,7 @@
   <circle cx="313.9" cy="217.2" r="1.3" fill="#ff52ff" class="tw" style="animation-delay:0.39s;animation-duration:4.02s"/>
   <circle cx="107.6" cy="87.2" r="1" fill="#fff" class="tw" style="animation-delay:3.61s;animation-duration:3.76s"/>
   <circle cx="294.6" cy="204.3" r="1" fill="#fff" class="tw" style="animation-delay:0.56s;animation-duration:5.49s"/>
-  <rect x="10" y="8" width="390" height="250" rx="14" fill="url(#cardbg)"/><rect x="10" y="8" width="390" height="250" rx="14" fill="url(#scan)"/><rect x="10" y="8" width="390" height="250" rx="14" fill="none" stroke="#e100ff" stroke-opacity=".55" stroke-width="1.5" filter="url(#soft)"/>
+  <rect x="10" y="8" width="390" height="250" rx="14" fill="url(#cardbg)"/><rect x="10" y="8" width="390" height="250" rx="14" fill="url(#scan)"/><rect x="10" y="8" width="390" height="250" rx="14" fill="none" stroke="#e100ff" stroke-opacity=".4" stroke-width="1.5" filter="url(#soft)"/>
   <rect x="10" y="8" width="390" height="250" rx="14" class="edge" filter="url(#soft)"/>
   <text x="38" y="48" class="cod">PROJETO 02</text>
   <text x="38" y="88" class="tt" filter="url(#soft)">MVC</text>

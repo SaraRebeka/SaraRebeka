@@ -60,7 +60,7 @@ CSS = f"""
 .lbl{{font-family:'Orbitron';font-size:9px;fill:#777;letter-spacing:2px}}
 .num{{font-family:'Orbitron';font-weight:700;font-size:17px;fill:{NEON_HI};letter-spacing:1px}}
 .col{{animation:in .4s ease backwards}}
-.hot{{filter:drop-shadow(0 0 4px {NEON_HI});animation:hot 2.2s ease-in-out infinite}}
+.hot{{filter:drop-shadow(0 0 2px {NEON_HI});animation:hot 2.2s ease-in-out infinite}}
 @keyframes in{{from{{opacity:.2}}to{{opacity:1}}}}
 @keyframes hot{{0%,100%{{opacity:.75}}50%{{opacity:1}}}}"""
 

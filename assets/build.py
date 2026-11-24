@@ -224,7 +224,7 @@ def topo():
 .ln{{animation:in .5s ease backwards}}
 .cur{{animation:blink 1s steps(1) infinite}}
 @keyframes spin{{to{{stroke-dashoffset:-320}}}}
-@keyframes cta{{0%,100%{{stroke-opacity:.6}}50%{{stroke-opacity:.9}}}}
+@keyframes cta{{0%,100%{{stroke-opacity:.85}}50%{{stroke-opacity:1}}}}
 @keyframes flick{{0%,18%,22%,25%,53%,57%,100%{{opacity:1}}20%,24%,55%{{opacity:.55}}}}
 @keyframes in{{from{{opacity:0;transform:translateX(-8px)}}to{{opacity:1;transform:none}}}}
 @keyframes blink{{50%{{opacity:0}}}}"""
@@ -301,7 +301,7 @@ def contato(rotulo, lado):
 .b{{fill:#000;stroke:{NEON};stroke-width:2;animation:glow 2.6s ease-in-out infinite}}
 .l{{font-family:'Orbitron';font-weight:600;font-size:15px;fill:{NEON};letter-spacing:3px;text-anchor:middle}}
 .f{{font-family:'Orbitron';font-size:10px;fill:#666;letter-spacing:3px}}
-@keyframes glow{{0%,100%{{stroke-opacity:.6}}50%{{stroke-opacity:.9}}}}"""
+@keyframes glow{{0%,100%{{stroke-opacity:.85}}50%{{stroke-opacity:1}}}}"""
     body = f"""{pagina(MEIO, H, base=True, lado=lado)}
   {estrelas(MEIO, H, 14, len(rotulo) * 7)}
   <rect x="{bx}" y="{by}" width="{bw}" height="{bh}" rx="8" class="b" filter="url(#soft)"/>

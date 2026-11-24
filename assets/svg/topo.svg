@@ -17,7 +17,7 @@
 .ln{animation:in .5s ease backwards}
 .cur{animation:blink 1s steps(1) infinite}
 @keyframes spin{to{stroke-dashoffset:-320}}
-@keyframes cta{0%,100%{stroke-opacity:.6}50%{stroke-opacity:.9}}
+@keyframes cta{0%,100%{stroke-opacity:.85}50%{stroke-opacity:1}}
 @keyframes flick{0%,18%,22%,25%,53%,57%,100%{opacity:1}20%,24%,55%{opacity:.55}}
 @keyframes in{from{opacity:0;transform:translateX(-8px)}to{opacity:1;transform:none}}
 @keyframes blink{50%{opacity:0}}

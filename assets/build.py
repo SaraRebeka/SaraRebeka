@@ -219,7 +219,7 @@ def sobre():
 .prompt{{font-family:'STM',monospace;font-size:15px;fill:#888}}
 .chip{{font-family:'Orbitron';font-size:11px;fill:{NEON_HI};letter-spacing:2px;text-anchor:middle}}
 .small{{font-family:'Orbitron';font-size:10px;fill:#777;letter-spacing:3px}}
-.ln{{opacity:0;animation:in .5s ease forwards}}
+.ln{{animation:in .5s ease backwards}}
 .cur{{animation:blink 1s steps(1) infinite}}
 @keyframes in{{from{{opacity:0;transform:translateX(-8px)}}to{{opacity:1;transform:none}}}}
 @keyframes blink{{50%{{opacity:0}}}}"""

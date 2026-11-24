@@ -102,7 +102,7 @@ def desenhar(cal):
 .mes{{font-family:'Orbitron';font-size:9px;fill:#777;letter-spacing:1px}}
 .lbl{{font-family:'Orbitron';font-size:9px;fill:#777;letter-spacing:2px}}
 .num{{font-family:'Orbitron';font-weight:700;font-size:17px;fill:{NEON_HI};letter-spacing:1px}}
-.col{{opacity:0;animation:in .4s ease forwards}}
+.col{{animation:in .4s ease backwards}}
 .hot{{filter:drop-shadow(0 0 4px {NEON_HI});animation:hot 2.2s ease-in-out infinite}}
 .scan{{animation:scan 7s linear infinite}}
 @keyframes in{{from{{opacity:0}}to{{opacity:1}}}}

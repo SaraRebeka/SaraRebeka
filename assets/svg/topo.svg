@@ -17,7 +17,7 @@
 .ln{animation:in .5s ease backwards}
 .cur{animation:blink 1s steps(1) infinite}
 @keyframes spin{to{stroke-dashoffset:-320}}
-@keyframes cta{0%,100%{stroke-opacity:.7}50%{stroke-opacity:1}}
+@keyframes cta{0%,100%{stroke-opacity:.6}50%{stroke-opacity:.9}}
 @keyframes flick{0%,18%,22%,25%,53%,57%,100%{opacity:1}20%,24%,55%{opacity:.55}}
 @keyframes in{from{opacity:0;transform:translateX(-8px)}to{opacity:1;transform:none}}
 @keyframes blink{50%{opacity:0}}
@@ -170,7 +170,7 @@
   <line x1="30" y1="70" x2="830" y2="70" stroke="#e100ff" stroke-opacity=".3"/>
   <text x="430" y="200" class="nome" filter="url(#glow)">SARA REBEKA</text>
   <text x="430" y="242" class="sub">ANÁLISE E DESENVOLVIMENTO DE SISTEMAS</text>
-  <rect x="310" y="272" width="240" height="46" rx="8" class="cta-b" filter="url(#glow)"/>
+  <rect x="310" y="272" width="240" height="46" rx="8" class="cta-b" filter="url(#soft)"/>
   <text x="430" y="300" class="cta" filter="url(#soft)">ENTRAR NO SITE ↗</text>
   <rect x="30" y="372" width="800" height="396" rx="14" fill="url(#cardbg)"/><rect x="30" y="372" width="800" height="396" rx="14" fill="url(#scan)"/><rect x="30" y="372" width="800" height="396" rx="14" fill="none" stroke="#e100ff" stroke-opacity=".4" stroke-width="1.5" filter="url(#soft)"/>
   <circle cx="54" cy="396" r="5" fill="#ff5f7a" opacity=".8"/><circle cx="72" cy="396" r="5" fill="#e100ff" opacity=".8"/><circle cx="90" cy="396" r="5" fill="#8a5cff" opacity=".8"/>

@@ -224,7 +224,7 @@ def topo():
 .ln{{animation:in .5s ease backwards}}
 .cur{{animation:blink 1s steps(1) infinite}}
 @keyframes spin{{to{{stroke-dashoffset:-320}}}}
-@keyframes cta{{0%,100%{{stroke-opacity:.7}}50%{{stroke-opacity:1}}}}
+@keyframes cta{{0%,100%{{stroke-opacity:.6}}50%{{stroke-opacity:.9}}}}
 @keyframes flick{{0%,18%,22%,25%,53%,57%,100%{{opacity:1}}20%,24%,55%{{opacity:.55}}}}
 @keyframes in{{from{{opacity:0;transform:translateX(-8px)}}to{{opacity:1;transform:none}}}}
 @keyframes blink{{50%{{opacity:0}}}}"""
@@ -238,7 +238,7 @@ def topo():
   <line x1="30" y1="70" x2="830" y2="70" stroke="{NEON}" stroke-opacity=".3"/>
   <text x="{MEIO}" y="200" class="nome" filter="url(#glow)">{NOME}</text>
   <text x="{MEIO}" y="242" class="sub">{SUBTITULO}</text>
-  <rect x="{MEIO - 120}" y="272" width="240" height="46" rx="8" class="cta-b" filter="url(#glow)"/>
+  <rect x="{MEIO - 120}" y="272" width="240" height="46" rx="8" class="cta-b" filter="url(#soft)"/>
   <text x="{MEIO}" y="300" class="cta" filter="url(#soft)">ENTRAR NO SITE ↗</text>
   {painel(30, py, 800, 396)}
   <circle cx="54" cy="{py + 24}" r="5" fill="#ff5f7a" opacity=".8"/><circle cx="72" cy="{py + 24}" r="5" fill="{NEON}" opacity=".8"/><circle cx="90" cy="{py + 24}" r="5" fill="#8a5cff" opacity=".8"/>
@@ -301,10 +301,10 @@ def contato(rotulo, lado):
 .b{{fill:#000;stroke:{NEON};stroke-width:2;animation:glow 2.6s ease-in-out infinite}}
 .l{{font-family:'Orbitron';font-weight:600;font-size:15px;fill:{NEON};letter-spacing:3px;text-anchor:middle}}
 .f{{font-family:'Orbitron';font-size:10px;fill:#666;letter-spacing:3px}}
-@keyframes glow{{0%,100%{{stroke-opacity:.7}}50%{{stroke-opacity:1}}}}"""
+@keyframes glow{{0%,100%{{stroke-opacity:.6}}50%{{stroke-opacity:.9}}}}"""
     body = f"""{pagina(MEIO, H, base=True, lado=lado)}
   {estrelas(MEIO, H, 14, len(rotulo) * 7)}
-  <rect x="{bx}" y="{by}" width="{bw}" height="{bh}" rx="8" class="b" filter="url(#glow)"/>
+  <rect x="{bx}" y="{by}" width="{bw}" height="{bh}" rx="8" class="b" filter="url(#soft)"/>
   <text x="{bx + bw / 2}" y="{by + bh / 2 + 6}" class="l" filter="url(#soft)">{escape(rotulo)}</text>
   <line x1="{lx1}" y1="118" x2="{lx2}" y2="118" stroke="{NEON}" stroke-opacity=".35"/>
   <text x="{rx}" y="152" class="f" text-anchor="{anchor}">{escape(rod)}</text>"""

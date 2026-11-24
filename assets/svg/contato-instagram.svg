@@ -5,7 +5,7 @@
 .b{fill:#000;stroke:#e100ff;stroke-width:2;animation:glow 2.6s ease-in-out infinite}
 .l{font-family:'Orbitron';font-weight:600;font-size:15px;fill:#e100ff;letter-spacing:3px;text-anchor:middle}
 .f{font-family:'Orbitron';font-size:10px;fill:#666;letter-spacing:3px}
-@keyframes glow{0%,100%{stroke-opacity:.7}50%{stroke-opacity:1}}
+@keyframes glow{0%,100%{stroke-opacity:.6}50%{stroke-opacity:.9}}
 
 .tw{animation:tw 4s ease-in-out infinite}
 @keyframes tw{0%,100%{opacity:.15}50%{opacity:1}}
@@ -51,7 +51,7 @@
   <circle cx="132.2" cy="94.7" r="0.6" fill="#fff" class="tw" style="animation-delay:1.66s;animation-duration:3.04s"/>
   <circle cx="170.2" cy="56.3" r="1" fill="#fff" class="tw" style="animation-delay:2.36s;animation-duration:3.93s"/>
   <circle cx="95.6" cy="149.3" r="0.6" fill="#ff52ff" class="tw" style="animation-delay:1.89s;animation-duration:2.69s"/>
-  <rect x="20" y="16" width="260" height="54" rx="8" class="b" filter="url(#glow)"/>
+  <rect x="20" y="16" width="260" height="54" rx="8" class="b" filter="url(#soft)"/>
   <text x="150.0" y="49.0" class="l" filter="url(#soft)">INSTAGRAM</text>
   <line x1="0" y1="118" x2="390" y2="118" stroke="#e100ff" stroke-opacity=".35"/>
   <text x="14" y="152" class="f" text-anchor="start">FIM DA TRANSMISSÃO · FEITO NO BRASIL</text>

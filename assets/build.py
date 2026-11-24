@@ -58,7 +58,7 @@ PROJETOS = {
 # ---------------------------------------------------------------- fontes
 def font_face(family, file, text, weight="normal"):
     """Subconjunto da fonte só com os caracteres usados, em base64."""
-    font = TTFont(HERE / "fonts" / file)
+    font = TTFont(HERE / "fonts" / file, recalcTimestamp=False)
     opts = subset.Options()
     opts.flavor = "woff2"
     opts.layout_features = ["*"]
@@ -328,7 +328,8 @@ if __name__ == "__main__":
         "header.svg": header(),
         "sobre.svg": sobre(),
         "titulo-projetos.svg": titulo("PROJETOS", 1),
-        "titulo-contato.svg": titulo("CONTATO", 2),
+        "titulo-atividade.svg": titulo("ATIVIDADE", 2),
+        "titulo-contato.svg": titulo("CONTATO", 3),
         "card-mvc.svg": card(PROJETOS["mvc"], "esq"),
         "card-ecommerce.svg": card(PROJETOS["ecommerce"], "dir"),
         "btn-linkedin.svg": botao("LINKEDIN", "esq"),

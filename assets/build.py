@@ -105,6 +105,11 @@ DEFS = f"""
     <feComponentTransfer in="a0" result="a"><feFuncA type="linear" slope=".55"/></feComponentTransfer>
     <feMerge><feMergeNode in="a"/><feMergeNode in="SourceGraphic"/></feMerge>
   </filter>
+  <filter id="tight" x="-5%" y="-20%" width="110%" height="140%">
+    <feGaussianBlur stdDeviation=".8" result="a0"/>
+    <feComponentTransfer in="a0" result="a"><feFuncA type="linear" slope=".5"/></feComponentTransfer>
+    <feMerge><feMergeNode in="a"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
   <pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse">
     <rect width="4" height="1" fill="#fff" opacity=".022"/>
   </pattern>"""
@@ -238,7 +243,7 @@ def topo():
   <line x1="30" y1="70" x2="830" y2="70" stroke="{NEON}" stroke-opacity=".3"/>
   <text x="{MEIO}" y="200" class="nome" filter="url(#glow)">{NOME}</text>
   <text x="{MEIO}" y="242" class="sub">{SUBTITULO}</text>
-  <rect x="{MEIO - 120}" y="272" width="240" height="46" rx="8" class="cta-b" filter="url(#soft)"/>
+  <rect x="{MEIO - 120}" y="272" width="240" height="46" rx="8" class="cta-b" filter="url(#tight)"/>
   <text x="{MEIO}" y="300" class="cta" filter="url(#soft)">ENTRAR NO SITE ↗</text>
   {painel(30, py, 800, 396)}
   <circle cx="54" cy="{py + 24}" r="5" fill="#ff5f7a" opacity=".8"/><circle cx="72" cy="{py + 24}" r="5" fill="{NEON}" opacity=".8"/><circle cx="90" cy="{py + 24}" r="5" fill="#8a5cff" opacity=".8"/>
@@ -304,7 +309,7 @@ def contato(rotulo, lado):
 @keyframes glow{{0%,100%{{stroke-opacity:.85}}50%{{stroke-opacity:1}}}}"""
     body = f"""{pagina(MEIO, H, base=True, lado=lado)}
   {estrelas(MEIO, H, 14, len(rotulo) * 7)}
-  <rect x="{bx}" y="{by}" width="{bw}" height="{bh}" rx="8" class="b" filter="url(#soft)"/>
+  <rect x="{bx}" y="{by}" width="{bw}" height="{bh}" rx="8" class="b" filter="url(#tight)"/>
   <text x="{bx + bw / 2}" y="{by + bh / 2 + 6}" class="l" filter="url(#soft)">{escape(rotulo)}</text>
   <line x1="{lx1}" y1="118" x2="{lx2}" y2="118" stroke="{NEON}" stroke-opacity=".35"/>
   <text x="{rx}" y="152" class="f" text-anchor="{anchor}">{escape(rod)}</text>"""

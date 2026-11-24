@@ -193,8 +193,8 @@ text{{font-family:'Orbitron',sans-serif}}
 # ---------------------------------------------------------------- 2. sobre (terminal)
 def sobre():
     W = 860
-    top, lh = 108, 30
-    H = top + lh * len(TERMINAL) + 120
+    top, lh = 136, 30
+    H = top + lh * len(TERMINAL) + 112
     texto = "QUEM SOU EU STACK > sara@void:~$ whoami" + "".join(k + v for k, v in TERMINAL) + "".join(STACK)
     linhas = []
     for i, (k, v) in enumerate(TERMINAL):
@@ -255,8 +255,9 @@ text{{font-family:'Orbitron'}}
 
 
 # ---------------------------------------------------------------- 4. cards de projeto
-def card(p):
+def card(p, lado):
     W, H = 420, 250
+    gx = 0 if lado == "esq" else 10
     texto = p["codigo"] + "".join(p["titulo"]) + "".join(p["texto"]) + "".join(p["tags"]) + "ACESSAR →"
     tags, x = [], 28
     for t in p["tags"]:
@@ -273,7 +274,7 @@ def card(p):
 .edge{{fill:none;stroke:{NEON};stroke-width:2;stroke-dasharray:120 1200;animation:run 6s linear infinite}}
 @keyframes run{{to{{stroke-dashoffset:-1320}}}}
 @keyframes pulse{{0%,100%{{opacity:.55}}50%{{opacity:1}}}}"""
-    body = f"""{moldura(W, H)}
+    body = f"""<g transform="translate({gx},0)">{moldura(W, H)}
   {estrelas(W, H, 22, sum(map(ord, p['codigo'])))}
   <rect x="1" y="1" width="{W-2}" height="{H-2}" rx="14" class="edge" filter="url(#soft)"/>
   <text x="28" y="40" class="cod">{p['codigo']}</text>
@@ -282,21 +283,28 @@ def card(p):
   <text x="28" y="146" class="tx">{escape(p['texto'][0])}</text>
   <text x="28" y="166" class="tx">{escape(p['texto'][1])}</text>
   {''.join(tags)}
-  <text x="392" y="204" class="go">ACESSAR →</text>"""
-    return svg(W, H, style, body, " ".join(p["titulo"]) + ": " + " ".join(p["texto"]))
+  <text x="392" y="204" class="go">ACESSAR →</text></g>"""
+    return svg(W + 10, H, style, body, " ".join(p["titulo"]) + ": " + " ".join(p["texto"]))
 
 
 # ---------------------------------------------------------------- 5. botões de contato
-def botao(rotulo):
-    W, H = 280, 64
+def botao(rotulo, lado):
+    """Meia faixa escura (430px); as duas metades lado a lado formam um painel só."""
+    W, H = 430, 110
+    bw, bh = 260, 54
+    bx = W - bw - 20 if lado == "esq" else 20
+    by = (H - bh) / 2
+    px = 0 if lado == "esq" else -30
     style = f"""{fonts(rotulo)}
 .b{{fill:transparent;stroke:{NEON};stroke-width:2;animation:glow 2.6s ease-in-out infinite}}
 .l{{font-family:'Orbitron';font-weight:600;font-size:15px;fill:{NEON};letter-spacing:3px;text-anchor:middle}}
-@keyframes glow{{0%,100%{{stroke-opacity:.75}}50%{{stroke-opacity:1}}}}"""
+@keyframes glow{{0%,100%{{stroke-opacity:.7}}50%{{stroke-opacity:1}}}}"""
     body = f"""
-  <rect x="10" y="10" width="{W-20}" height="{H-20}" rx="8" fill="#000"/>
-  <rect x="10" y="10" width="{W-20}" height="{H-20}" rx="8" class="b" filter="url(#glow)"/>
-  <text x="{W/2}" y="{H/2+6}" class="l" filter="url(#soft)">{escape(rotulo)}</text>"""
+  <rect x="{px}" width="{W + 30}" height="{H}" rx="14" fill="#0b070d"/>
+  <rect x="{px}" width="{W + 30}" height="{H}" rx="14" fill="url(#scan)"/>
+  <rect x="{bx}" y="{by}" width="{bw}" height="{bh}" rx="8" fill="#000"/>
+  <rect x="{bx}" y="{by}" width="{bw}" height="{bh}" rx="8" class="b" filter="url(#glow)"/>
+  <text x="{bx + bw/2}" y="{by + bh/2 + 6}" class="l" filter="url(#soft)">{escape(rotulo)}</text>"""
     return svg(W, H, style, body, rotulo)
 
 
@@ -321,10 +329,10 @@ if __name__ == "__main__":
         "sobre.svg": sobre(),
         "titulo-projetos.svg": titulo("PROJETOS", 1),
         "titulo-contato.svg": titulo("CONTATO", 2),
-        "card-mvc.svg": card(PROJETOS["mvc"]),
-        "card-ecommerce.svg": card(PROJETOS["ecommerce"]),
-        "btn-linkedin.svg": botao("LINKEDIN"),
-        "btn-instagram.svg": botao("INSTAGRAM"),
+        "card-mvc.svg": card(PROJETOS["mvc"], "esq"),
+        "card-ecommerce.svg": card(PROJETOS["ecommerce"], "dir"),
+        "btn-linkedin.svg": botao("LINKEDIN", "esq"),
+        "btn-instagram.svg": botao("INSTAGRAM", "dir"),
         "rodape.svg": rodape(),
     }
     for nome, conteudo in arquivos.items():

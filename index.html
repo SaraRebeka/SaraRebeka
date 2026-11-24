@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sara Rebeka · Void</title>
+  <meta name="description" content="Sara Rebeka — estudante de Análise e Desenvolvimento de Sistemas. Projetos, atividade e contato." />
+  <meta name="theme-color" content="#08060c" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --neon: #e100ff;
+      --neon-hi: #ff52ff;
+      --bg: #08060c;
+      --panel: #1a001f;
+      --deep: #0d0010;
+      --txt: #eee;
+      --mute: #888;
+      --glow: 0 0 10px var(--neon), 0 0 20px var(--neon), 0 0 30px var(--neon);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background: radial-gradient(ellipse at 50% 0%, #1a0420 0%, var(--bg) 55%) fixed, var(--bg);
+      color: var(--txt);
+      line-height: 1.6;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+    body::after { /* linhas de scan */
+      content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 50;
+      background: repeating-linear-gradient(0deg, rgba(255,255,255,.022) 0 1px, transparent 1px 4px);
+    }
+    #estrelas { position: fixed; inset: 0; z-index: -1; }
+    a { color: inherit; }
+    ::selection { background: var(--neon); color: #000; }
+
+    /* NAV */
+    nav {
+      position: sticky; top: 0; z-index: 40;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px clamp(16px, 4vw, 48px);
+      background: rgba(8, 6, 12, .75);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #e100ff44;
+    }
+    .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; font-weight: 800; letter-spacing: 3px; }
+    .logo b {
+      display: grid; place-items: center; width: 38px; height: 34px;
+      border: 1px solid var(--neon); border-radius: 6px; box-shadow: 0 0 8px var(--neon); font-size: 14px;
+    }
+    .logo span { font-size: 12px; font-weight: 500; color: #ccc; }
+    nav ul { display: flex; gap: 6px; list-style: none; }
+    nav ul a {
+      display: block; padding: 8px 16px; border-radius: 5px; text-decoration: none;
+      font-size: 12px; letter-spacing: 2px; color: #ddd; transition: all .3s ease;
+    }
+    nav ul a:hover, nav ul a:focus-visible { background: #fff; color: rgb(100, 0, 83); outline: none; }
+
+    main { max-width: 960px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 32px); }
+    section { padding: 72px 0 24px; scroll-margin-top: 70px; }
+
+    /* HERO */
+    .hero { min-height: calc(100vh - 70px); display: grid; place-items: center; text-align: center; position: relative; padding: 40px 0; }
+    .aneis { position: absolute; inset: 0; display: grid; place-items: center; pointer-events: none; }
+    .aneis svg { width: min(96vw, 900px); height: auto; overflow: visible; }
+    .aneis ellipse { fill: none; stroke: var(--neon); stroke-width: 1.2; stroke-dasharray: 6 10; opacity: .35; animation: gira 40s linear infinite; }
+    .aneis ellipse:nth-child(2) { animation-duration: 28s; animation-direction: reverse; opacity: .25; }
+    .aneis ellipse:nth-child(3) { animation-duration: 18s; opacity: .18; }
+    @keyframes gira { to { stroke-dashoffset: -320; } }
+    .hero h1 {
+      font-size: clamp(2.2rem, 9vw, 5.2rem); font-weight: 800; letter-spacing: .12em;
+      text-shadow: var(--glow); animation: pisca 6s infinite; position: relative;
+    }
+    @keyframes pisca { 0%,18%,22%,25%,53%,57%,100% { opacity: 1 } 20%,24%,55% { opacity: .55 } }
+    .hero .sub { margin-top: 12px; font-size: clamp(.7rem, 2vw, .95rem); letter-spacing: .3em; color: #ccc; }
+    .hero .acoes { margin-top: 44px; display: flex; gap: 18px; justify-content: center; flex-wrap: wrap; }
+    .sinal { position: absolute; bottom: 24px; left: 0; right: 0; display: flex; justify-content: space-between; font-size: 10px; letter-spacing: 2px; color: var(--mute); }
+    .sinal span::before { content: "●"; color: var(--neon-hi); margin-right: 8px; animation: pulsa 2s infinite; }
+    @keyframes pulsa { 50% { opacity: .3 } }
+
+    /* BOTÕES */
+    .btn {
+      display: inline-block; padding: 15px 40px; border: 2px solid var(--neon); border-radius: 8px;
+      background: transparent; color: var(--neon); text-decoration: none; text-transform: uppercase;
+      font-size: .9rem; font-weight: 600; letter-spacing: 3px; cursor: pointer;
+      box-shadow: 0 0 10px var(--neon), 0 0 20px var(--neon); transition: all .3s ease;
+    }
+    .btn:hover, .btn:focus-visible {
+      background: var(--neon); color: #000; outline: none;
+      box-shadow: 0 0 20px var(--neon), 0 0 40px var(--neon); transform: scale(1.05);
+    }
+    .btn.fantasma { box-shadow: none; border-color: #e100ff66; color: #ddd; }
+
+    /* TÍTULOS DE SEÇÃO */
+    .titulo { text-align: center; margin-bottom: 40px; }
+    .titulo small { display: block; color: var(--neon-hi); font-size: 12px; letter-spacing: 3px; }
+    .titulo h2 {
+      display: flex; align-items: center; gap: 24px; justify-content: center;
+      font-size: clamp(1.3rem, 4vw, 2rem); letter-spacing: .25em; text-shadow: var(--glow);
+    }
+    .titulo h2::before, .titulo h2::after {
+      content: ""; flex: 1; max-width: 220px; height: 2px; background: var(--neon); box-shadow: 0 0 8px var(--neon);
+    }
+
+    /* PAINEL / TERMINAL */
+    .painel {
+      background: radial-gradient(circle at 30% 20%, #1c0622, #0a070d 70%);
+      border: 1px solid #e100ff88; border-radius: 14px; box-shadow: 0 0 20px #e100ff44;
+    }
+    .terminal .barra {
+      display: flex; align-items: center; gap: 8px; padding: 14px 22px; border-bottom: 1px solid #e100ff33;
+    }
+    .terminal .barra i { width: 11px; height: 11px; border-radius: 50%; background: #ff5f7a; }
+    .terminal .barra i:nth-child(2) { background: var(--neon); }
+    .terminal .barra i:nth-child(3) { background: #8a5cff; }
+    .terminal .barra span { margin-left: auto; font-size: 10px; letter-spacing: 3px; color: #777; }
+    .terminal .corpo { padding: 32px clamp(20px, 4vw, 40px) 36px; }
+    .terminal h3 { font-size: 1.3rem; letter-spacing: 4px; text-shadow: 0 0 8px var(--neon); margin-bottom: 18px; }
+    .linhas { font-family: 'Share Tech Mono', monospace; font-size: clamp(.9rem, 2.4vw, 1.08rem); min-height: 9.5em; }
+    .linhas p { display: grid; grid-template-columns: 7.5em 1.2em 1fr; }
+    .linhas .k { color: var(--neon-hi); }
+    .linhas .s { color: #666; }
+    .cursor { display: inline-block; width: .6em; height: 1.1em; background: var(--neon-hi); vertical-align: -3px; animation: pisca-c 1s steps(1) infinite; }
+    @keyframes pisca-c { 50% { opacity: 0 } }
+    .stack { margin-top: 28px; }
+    .stack small { font-size: 10px; letter-spacing: 3px; color: #777; }
+    .chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; list-style: none; }
+    .chips li {
+      padding: 4px 14px; border: 1px solid #e100ffaa; border-radius: 6px; background: var(--panel);
+      color: var(--neon-hi); font-size: 11px; letter-spacing: 2px;
+    }
+
+    /* PROJETOS */
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 22px; }
+    .card {
+      position: relative; display: flex; flex-direction: column; gap: 10px; padding: 28px;
+      text-decoration: none; overflow: hidden; transition: transform .3s ease, box-shadow .3s ease;
+    }
+    .card::before { /* luz que corre na borda */
+      content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 2px; pointer-events: none;
+      background: conic-gradient(from var(--a, 0deg), transparent 0 80%, var(--neon-hi) 90%, transparent 100%);
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor; mask-composite: exclude; animation: corre 6s linear infinite;
+    }
+    @property --a { syntax: '<angle>'; inherits: false; initial-value: 0deg; }
+    @keyframes corre { to { --a: 360deg; } }
+    .card:hover, .card:focus-visible { transform: translateY(-6px); box-shadow: 0 0 30px #e100ff88; outline: none; }
+    .card .cod { font-family: 'Share Tech Mono', monospace; color: var(--neon-hi); font-size: 13px; letter-spacing: 2px; }
+    .card h3 { font-size: 1.45rem; font-weight: 800; line-height: 1.25; letter-spacing: 2px; text-shadow: 0 0 6px var(--neon); }
+    .card p { font-family: 'Share Tech Mono', monospace; color: #bbb; }
+    .card .rodape-card { margin-top: auto; display: flex; align-items: center; justify-content: space-between; gap: 10px; padding-top: 12px; }
+    .card .chips { margin: 0; }
+    .card .chips li { font-size: 10px; padding: 2px 10px; }
+    .card .ir { font-size: 11px; letter-spacing: 2px; color: var(--neon); white-space: nowrap; transition: letter-spacing .3s; }
+    .card:hover .ir { letter-spacing: 4px; }
+
+    /* ATIVIDADE */
+    .grafico img { display: block; width: 100%; height: auto; }
+
+    /* CONTATO */
+    .contato { display: flex; gap: 22px; justify-content: center; flex-wrap: wrap; padding: 12px 0 30px; }
+
+    footer {
+      max-width: 960px; margin: 48px auto 0; padding: 22px 16px 32px; text-align: center;
+      border-top: 1px solid #e100ff44; color: #666; font-size: 10px; letter-spacing: 3px;
+    }
+
+    /* surgir ao rolar */
+    .surge { opacity: 0; transform: translateY(24px); transition: opacity .8s ease, transform .8s ease; }
+    .surge.visivel { opacity: 1; transform: none; }
+
+    @media (max-width: 640px) {
+      nav ul a { padding: 6px 8px; font-size: 10px; letter-spacing: 1px; }
+      .logo span { display: none; }
+      .sinal { flex-direction: column; align-items: center; gap: 4px; }
+      .linhas p { grid-template-columns: 1fr; margin-bottom: 8px; }
+      .linhas .s { display: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before { animation: none !important; transition: none !important; }
+      .surge { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <canvas id="estrelas" aria-hidden="true"></canvas>
+
+  <nav>
+    <a class="logo" href="#topo"><b>SR</b><span>MVC</span></a>
+    <ul>
+      <li><a href="#sobre">SOBRE</a></li>
+      <li><a href="#projetos">PROJETOS</a></li>
+      <li><a href="#contato">CONTATO</a></li>
+    </ul>
+  </nav>
+
+  <main id="topo">
+    <header class="hero">
+      <div class="aneis" aria-hidden="true"><svg viewBox="0 0 860 260"><ellipse cx="430" cy="130" rx="400" ry="112"/><ellipse cx="430" cy="130" rx="330" ry="92"/><ellipse cx="430" cy="130" rx="260" ry="73"/></svg></div>
+      <div>
+        <h1>SARA REBEKA</h1>
+        <p class="sub">ANÁLISE E DESENVOLVIMENTO DE SISTEMAS</p>
+        <div class="acoes">
+          <a class="btn" href="#sobre">Explorar o vazio</a>
+          <a class="btn fantasma" href="https://github.com/SaraRebeka">GitHub</a>
+        </div>
+      </div>
+      <div class="sinal"><span>SINAL: ESTÁVEL</span><em style="font-style:normal">UNIVERSO 42-S · TRANSMISSÃO</em></div>
+    </header>
+
+    <section id="sobre" class="surge">
+      <div class="titulo"><small>// 00</small><h2>SOBRE</h2></div>
+      <div class="painel terminal">
+        <div class="barra"><i></i><i></i><i></i><span>sara@void:~$ whoami</span></div>
+        <div class="corpo">
+          <h3>QUEM SOU EU</h3>
+          <div class="linhas" id="linhas" aria-live="polite"></div>
+          <div class="stack">
+            <small>STACK</small>
+            <ul class="chips">
+              <li>HTML</li><li>CSS</li><li>JAVASCRIPT</li><li>NODE.JS</li><li>POSTGRESQL</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projetos" class="surge">
+      <div class="titulo"><small>// 01</small><h2>PROJETOS</h2></div>
+      <div class="cards">
+        <a class="card painel" href="https://github.com/SaraRebeka/Multiversal-Void-Company">
+          <span class="cod">PROJETO 01</span>
+          <h3>MULTIVERSAL<br>VOID COMPANY</h3>
+          <p>Site institucional da MVC, uma empresa fictícia de soluções interdimensionais.</p>
+          <div class="rodape-card">
+            <ul class="chips"><li>HTML</li><li>CSS</li></ul>
+            <span class="ir">ACESSAR →</span>
+          </div>
+        </a>
+        <a class="card painel" href="https://github.com/SaraRebeka/Trabalho-Final-de-Projeto-Web-1">
+          <span class="cod">PROJETO 02</span>
+          <h3>MVC<br>E-COMMERCE</h3>
+          <p>Lojinha, checkout e painel admin da MVC, com back-end em Node e PostgreSQL.</p>
+          <div class="rodape-card">
+            <ul class="chips"><li>JS</li><li>NODE</li><li>POSTGRES</li></ul>
+            <span class="ir">ACESSAR →</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section id="atividade" class="surge">
+      <div class="titulo"><small>// 02</small><h2>ATIVIDADE</h2></div>
+      <div class="grafico">
+        <img src="assets/svg/grafico.svg" width="800" height="300"
+             alt="Gráfico de contribuições da Sara no GitHub nos últimos 12 meses" />
+      </div>
+    </section>
+
+    <section id="contato" class="surge">
+      <div class="titulo"><small>// 03</small><h2>CONTATO</h2></div>
+      <div class="contato">
+        <a class="btn" href="https://www.linkedin.com/in/sara-rebeka-pinheiro-mendes">LinkedIn</a>
+        <a class="btn" href="https://www.instagram.com/sara_rebeka_pinheiro_mendes">Instagram</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>© MULTIVERSAL VOID COMPANY · FIM DA TRANSMISSÃO · FEITO NO BRASIL</footer>
+
+  <script>
+    const calmo = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Terminal que digita
+    const dados = [
+      ['nome', 'Sara Rebeka Pinheiro Mendes'],
+      ['origem', 'Brasil'],
+      ['status', 'estudando Análise e Desenvolvimento de Sistemas'],
+      ['interesse', 'programação (e universos que ainda não existem)'],
+      ['colabora', 'em qualquer coisa que eu consiga fazer'],
+    ];
+    const caixa = document.getElementById('linhas');
+    const cursor = Object.assign(document.createElement('span'), { className: 'cursor' });
+    function linha(k) {
+      const p = document.createElement('p');
+      p.innerHTML = `<span class="k">${k}</span><span class="s">›</span><span class="v"></span>`;
+      caixa.append(p);
+      return p.querySelector('.v');
+    }
+    async function digitar() {
+      for (const [k, v] of dados) {
+        const alvo = linha(k);
+        alvo.append(cursor);
+        for (const ch of v) {
+          cursor.before(ch);
+          await new Promise(r => setTimeout(r, 22 + Math.random() * 40));
+        }
+        await new Promise(r => setTimeout(r, 180));
+      }
+      caixa.append(cursor);
+    }
+    if (calmo) { dados.forEach(([k, v]) => (linha(k).textContent = v)); caixa.append(cursor); }
+
+    // Surge ao rolar (e começa a digitar quando o terminal aparece)
+    let digitou = calmo;
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (!e.isIntersecting) return;
+      e.target.classList.add('visivel');
+      if (e.target.id === 'sobre' && !digitou) { digitou = true; digitar(); }
+      io.unobserve(e.target);
+    }), { threshold: .2 });
+    document.querySelectorAll('.surge').forEach(el => io.observe(el));
+
+    // Céu de estrelas
+    const cv = document.getElementById('estrelas'), ctx = cv.getContext('2d');
+    let estrelas = [];
+    function montar() {
+      const dpr = devicePixelRatio || 1;
+      cv.width = innerWidth * dpr; cv.height = innerHeight * dpr;
+      cv.style.width = innerWidth + 'px'; cv.style.height = innerHeight + 'px';
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      const n = Math.round(innerWidth * innerHeight / 9000);
+      estrelas = Array.from({ length: n }, () => ({
+        x: Math.random() * innerWidth, y: Math.random() * innerHeight,
+        r: Math.random() * 1.2 + .3, f: Math.random() * Math.PI * 2, v: .5 + Math.random() * 1.5,
+        c: Math.random() < .2 ? '255,82,255' : '255,255,255',
+      }));
+    }
+    function desenhar(t) {
+      ctx.clearRect(0, 0, innerWidth, innerHeight);
+      for (const s of estrelas) {
+        const a = calmo ? .6 : .2 + .8 * (0.5 + 0.5 * Math.sin(s.f + t / 1000 * s.v));
+        ctx.fillStyle = `rgba(${s.c},${a})`;
+        ctx.beginPath(); ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2); ctx.fill();
+      }
+      if (!calmo) requestAnimationFrame(desenhar);
+    }
+    addEventListener('resize', montar);
+    montar(); requestAnimationFrame(desenhar);
+  </script>
+</body>
+</html>

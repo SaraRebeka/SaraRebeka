@@ -29,7 +29,7 @@ text{font-family:'Orbitron'}
     <rect width="4" height="1" fill="#fff" opacity=".025"/>
   </pattern></defs>
 <rect width="860" height="86" rx="14" fill="url(#void)"/><rect width="860" height="86" rx="14" fill="url(#scan)"/>
-  <text x="430" y="22" class="n">// 03</text>
+  <text x="430" y="22" class="n">// 02</text>
   <text x="430" y="58" class="t" filter="url(#glow)">CONTATO</text>
   <line x1="40" y1="52" x2="250" y2="52" class="bar" filter="url(#soft)"/>
   <line x1="820" y1="52" x2="610" y2="52" class="bar" filter="url(#soft)"/>

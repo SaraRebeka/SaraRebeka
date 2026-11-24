@@ -8,7 +8,7 @@
 .lbl{font-family:'Orbitron';font-size:9px;fill:#777;letter-spacing:2px}
 .num{font-family:'Orbitron';font-weight:700;font-size:17px;fill:#ff52ff;letter-spacing:1px}
 .col{animation:in .4s ease backwards}
-.hot{filter:drop-shadow(0 0 4px #ff52ff);animation:hot 2.2s ease-in-out infinite}
+.hot{filter:drop-shadow(0 0 2px #ff52ff);animation:hot 2.2s ease-in-out infinite}
 @keyframes in{from{opacity:.2}to{opacity:1}}
 @keyframes hot{0%,100%{opacity:.75}50%{opacity:1}}
 .scan{animation:scan 7s linear infinite}
@@ -29,18 +29,21 @@
     <stop offset="0" stop-color="#1c0622"/><stop offset="1" stop-color="#0a070d"/>
   </radialGradient>
   <filter id="glow" x="-30%" y="-60%" width="160%" height="220%">
-    <feGaussianBlur stdDeviation="3" result="a"/>
-    <feGaussianBlur stdDeviation="9" result="b"/>
-    <feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="a"/><feMergeNode in="SourceGraphic"/></feMerge>
+    <feGaussianBlur stdDeviation="2" result="a"/>
+    <feGaussianBlur stdDeviation="7" result="b0"/>
+    <feComponentTransfer in="b0" result="b"><feFuncA type="linear" slope=".45"/></feComponentTransfer>
+    <feComponentTransfer in="a" result="a2"><feFuncA type="linear" slope=".6"/></feComponentTransfer>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="a2"/><feMergeNode in="SourceGraphic"/></feMerge>
   </filter>
   <filter id="soft" x="-20%" y="-50%" width="140%" height="200%">
-    <feGaussianBlur stdDeviation="2.2" result="a"/>
+    <feGaussianBlur stdDeviation="1.6" result="a0"/>
+    <feComponentTransfer in="a0" result="a"><feFuncA type="linear" slope=".55"/></feComponentTransfer>
     <feMerge><feMergeNode in="a"/><feMergeNode in="SourceGraphic"/></feMerge>
   </filter>
   <pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse">
     <rect width="4" height="1" fill="#fff" opacity=".022"/>
   </pattern></defs>
-<rect x="0" y="0" width="800" height="300" rx="14" fill="url(#cardbg)"/><rect x="0" y="0" width="800" height="300" rx="14" fill="url(#scan)"/><rect x="0" y="0" width="800" height="300" rx="14" fill="none" stroke="#e100ff" stroke-opacity=".55" stroke-width="1.5" filter="url(#soft)"/>
+<rect x="0" y="0" width="800" height="300" rx="14" fill="url(#cardbg)"/><rect x="0" y="0" width="800" height="300" rx="14" fill="url(#scan)"/><rect x="0" y="0" width="800" height="300" rx="14" fill="none" stroke="#e100ff" stroke-opacity=".4" stroke-width="1.5" filter="url(#soft)"/>
   <text x="36" y="44" class="gh" filter="url(#soft)">ATIVIDADE NO MULTIVERSO</text>
   <text x="764" y="44" class="gsub" text-anchor="end">últimos 12 meses</text>
   <text x="98" y="94" class="mes">DEZ</text><text x="150" y="94" class="mes">JAN</text><text x="202" y="94" class="mes">FEV</text><text x="254" y="94" class="mes">MAR</text><text x="319" y="94" class="mes">ABR</text><text x="371" y="94" class="mes">MAI</text><text x="436" y="94" class="mes">JUN</text><text x="488" y="94" class="mes">JUL</text><text x="540" y="94" class="mes">AGO</text><text x="605" y="94" class="mes">SET</text><text x="657" y="94" class="mes">OUT</text><text x="709" y="94" class="mes">NOV</text><text x="62" y="127" class="mes" text-anchor="end">SEG</text><text x="62" y="153" class="mes" text-anchor="end">QUA</text><text x="62" y="179" class="mes" text-anchor="end">SEX</text>
